@@ -2,12 +2,12 @@ import subprocess
 import requests
 import os 
 from dotenv import load_dotenv
+from datetime import datetime
 
 #Load enviroment variable
-load_dotenv
+load_dotenv()
 
 #Get token and id from env
-
 TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID")
 
@@ -39,16 +39,17 @@ def send_message(bot_token, chat_id, message):
 
     try:
         response = requests.post(url, json=payload)
-        print(response.status_code)
+        print(f"Status: {response.status_code}")
 
         if(response.status_code == 200):
-            print("success")
+            print(datetime.now())
+            print("Success")
         else:
-            print("fail")
+            print("Fail")
             print(response.reason)
 
     except requests.exceptions.RequestException as e:
-        print(f"request error: {e}")
+        print(f"Request Error: {e}")
 
 
 
