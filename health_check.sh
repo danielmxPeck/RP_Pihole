@@ -21,19 +21,31 @@ echo "🔍 Pi-hole Health Check"
 pihole_status=$(/usr/local/bin/pihole status | grep -io 'enabled\|disabled')
 pihole_PID=$(pgrep pihole-FTL)
 test_block=$(dig +short doubleclick.com @127.0.0.1)
+process_info=$(ps -p $pihole_PID -o pcpu,pmem,time --no-header)
+cpu_usage=$(echo "$process_info" | awk '{print $1}')
+mem_usage=$(echo "$process_info" | awk '{print $2}')
+time_used=$(echo "$process_info" | awk '{print $3}')
 
-echo "PI_PID: $pihole_PID"
-echo "Pi-hole Status: $pihole_status"
 
+echo "🆔PI_PID: $pihole_PID"
+echo "📊 CPU Usage: $cpu_usage%"
+echo "🖥️ Memory Usage: $mem_usage%"
+echo "⏳ Time+: $time_used"
+
+echo -n "Pi-hole Status: "
 if [ "$pihole_status" == "enabled" ]; then
     echo "Enabled ✅"
 else
     echo "Disabled ❌"
 fi
 
+echo -n "Ad Blocking: "
 if [[ "$test_block" == "0.0.0.0" || -z "$test_block" ]]; then
-    echo "Ad Blocking ✅ Working"
+    echo "Working ✅"
 else
-    echo "Ad Blocking ❌ Not Working"
+    echo "Not Working ❌"
     echo "Returned IP: $test_block"
 fi
+
+
+
