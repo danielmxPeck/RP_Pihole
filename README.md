@@ -22,8 +22,8 @@ This repository contains a Python script that performs a system health check and
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/your-username/healthcheck-telegram-bot.git
-    cd healthcheck-telegram-bot
+    git clone [https://github.com/your-username/healthcheck-telegram-bot.git](https://github.com/danielmxPeck/RP_Pihole.git)
+    cd RP_Pihole
     ```
 
 2. **Create a `.env` File**:
