@@ -44,23 +44,23 @@ This repository contains a Python script that performs a system health check and
   # Sample Output
   ```
 🕰️ Date & Time
-Sat Mar 15 06:16:34 PM +08 2025
+Tue Mar 25 03:54:45 PM +08 2025
 
 👤 User
-HostName: User
+HostName: Dp
 IPV4: 192.168.1.14
 
 🖥️  Pi Health Check
-CPU Load:  0.10, 0.12, 0.09
-Memory Usage: 919Mi/4.0Gi
-Disk Usage: 9.3G/29G
-CPU Temp: temp=57.1'C
+CPU Load:  0.17, 0.18, 0.16
+Memory Usage: 994Mi/4.0Gi
+Disk Usage: 9.4G/29G
+CPU Temp: temp=59.8'C
 
 🔍 Pi-hole Health Check
-🆔PI_PID: 32569
+🆔 PI_PID: 32820
 📊 CPU Usage: 0.1%
-🖥️ Memory Usage: 1.2%
-⏳ Time+: 00:35:42
+🖥️  Memory Usage: 1.3%
+⏳ Process work time: 00:57:52
 Pi-hole Status: Enabled ✅
 Ad Blocking: Working ✅
 ```
