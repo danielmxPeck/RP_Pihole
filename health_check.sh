@@ -27,10 +27,10 @@ mem_usage=$(echo "$process_info" | awk '{print $2}')
 time_used=$(echo "$process_info" | awk '{print $3}')
 
 
-echo "🆔PI_PID: $pihole_PID"
+echo "🆔 PI_PID: $pihole_PID"
 echo "📊 CPU Usage: $cpu_usage%"
-echo "🖥️ Memory Usage: $mem_usage%"
-echo "⏳ Time+: $time_used"
+echo "🖥️  Memory Usage: $mem_usage%"
+echo "⏳ Process work time: $time_used"
 
 echo -n "Pi-hole Status: "
 if [ "$pihole_status" == "enabled" ]; then
